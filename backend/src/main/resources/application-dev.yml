@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sanctions_dev
+    username: sanctions
+    password: sanctions
+
+logging:
+  level:
+    root: DEBUG
+    com.sanctions.screening: DEBUG
+    org.springframework: INFO
+
+ollama:
+  enabled: true
+  base-url: http://localhost:11434
+  model: qwen3:4b
+
+sanctions:
+  xml:
+    source-url: https://www.un.org/securitycouncil/content/un-sc-consolidated-list-xml
+    sync-interval-hours: 24
+
+cors:
+  allowed-origins: http://localhost:5173,http://localhost:3000

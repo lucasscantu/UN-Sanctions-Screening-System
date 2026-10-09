@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:sanctions-test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: 
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+  flyway:
+    enabled: false
+
+logging:
+  level:
+    root: WARN
+    com.sanctions.screening: DEBUG
+
+ollama:
+  enabled: false
+
+sanctions:
+  xml:
+    source-url: https://test.url/consolidated.xml
+    download-timeout-seconds: 10
+    sync-interval-hours: 24
+
+search:
+  candidate-limit: 10
+  similarity-threshold: 60
+  min-score-filter: 0
+  max-ai-candidates: 5
+
+cors:
+  allowed-origins: http://localhost:5173
